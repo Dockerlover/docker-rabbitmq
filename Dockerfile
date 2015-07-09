@@ -20,7 +20,7 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F7B8CEA6056E8E56 &&
 RUN echo "ERLANGCOOKIE" > /var/lib/rabbitmq/.erlang.cookie
 RUN chown rabbitmq:rabbitmq /var/lib/rabbitmq/.erlang.cookie
 RUN chmod 400 /var/lib/rabbitmq/.erlang.cookie
-
+RUN chown -R rabbitmq:rabbitmq /var/lib/rabbitmq
 # 添加脚本
 ADD start.sh /start.sh
 ADD set_rabbitmq_password.sh /set_rabbitmq_password.sh
