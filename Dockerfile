@@ -24,7 +24,7 @@ RUN chown -R rabbitmq:rabbitmq /var/lib/rabbitmq
 # 添加脚本
 COPY set_rabbitmq_password.sh /set_rabbitmq_password.sh
 # 声明可执行脚本,并执行脚本
-RUN chmod +x /*.sh ; /set_rabbitmq_password.sh
+RUN chmod +x /*.sh ; ./set_rabbitmq_password.sh
 # 暴露默认端口
 EXPOSE 5672 15672
 # 配置supervisord
