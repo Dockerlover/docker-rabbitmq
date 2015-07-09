@@ -3,7 +3,7 @@ docker化Rabbitmq
 
 ## 镜像特点
 
-- 2015/6/21 继承基础镜像docker-register，自身具备服务注册功能
+- 2015/7/9 继承基础镜像docker-ubuntu
 
 ## 使用方法
 
