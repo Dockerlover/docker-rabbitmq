@@ -22,9 +22,9 @@ RUN chown rabbitmq:rabbitmq /var/lib/rabbitmq/.erlang.cookie
 RUN chmod 400 /var/lib/rabbitmq/.erlang.cookie
 RUN chown -R rabbitmq:rabbitmq /var/lib/rabbitmq
 # 添加脚本
-ADD set_rabbitmq_password.sh /set_rabbitmq_password.sh
+COPY set_rabbitmq_password.sh /set_rabbitmq_password.sh
 # 声明可执行脚本,并执行脚本
-RUN /set_rabbitmq_password.sh
+RUN chmod +x /*.sh && /set_rabbitmq_password.sh
 # 暴露默认端口
 EXPOSE 5672 15672
 # 配置supervisord
